@@ -23,7 +23,7 @@ public class Main {
             for (int i = 0; i < args.length; i++) {
                 if (args[i].equals("-o")) {
                     System.out.println("-o");
-                    if (!map.containsKey(args[i + 1])) {
+                    if (i != args.length - 1 && !map.containsKey(args[i + 1])) {
                         map.get("-o").call(args[i + 1]);
                     } else {
                         map.get("-o").call("");
@@ -31,7 +31,7 @@ public class Main {
                 }
 
                 if (args[i].equals("-p")) {
-                    if (!map.containsKey(args[i + 1])) {
+                    if (i != args.length - 1 && !map.containsKey(args[i + 1])) {
                         map.get("-p").call(args[i + 1]);
                     } else {
                         map.get("-p").call("");
